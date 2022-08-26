@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>CIAO</h1>
-</body>
-</html>
+@extends('layouts.app')
+
+@section('main')
+    <div class="card">
+        @foreach ($movies as $movie)
+            <h2>Titolo: {{$movie->title}}</h2>
+            <h4>Titolo in originale: {{$movie->original_title}}</h4>
+            <p>Nazionalità: {{$movie->nationality}}</p>
+            <p>Voto: {{$movie->vote}}</p>
+            <h6>{{$movie->date}}</h6>
+        @endforeach
+    </div>
+@endsection
